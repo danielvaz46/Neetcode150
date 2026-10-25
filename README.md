@@ -6,7 +6,7 @@ My LeetCode solutions, organized by pattern. Harder problems include a short not
 
 | # | Problem | Pattern | Difficulty | Time | Space |
 |---|---------|---------|------------|------|-------|
-|   |         |         |            |      |       |
+| 217 | [Contains Duplicate](arrays-hashing/217-contains-duplicate.py) | arrays-hashing | Easy | O(n) | O(n) |
 
 ## Layout
 
