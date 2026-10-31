@@ -10,6 +10,7 @@ My LeetCode solutions, organized by pattern. Harder problems include a short not
 | 49 | [Group Anagrams](arrays-hashing/49-group-anagrams.py) | arrays-hashing | Medium | O(n * k) | O(n * k) |
 | 217 | [Contains Duplicate](arrays-hashing/217-contains-duplicate.py) | arrays-hashing | Easy | O(n) | O(n) |
 | 242 | [Valid Anagram](arrays-hashing/242-valid-anagram.py) | arrays-hashing | Easy | O(n) | O(1) |
+| 347 | [Top K Frequent Elements](arrays-hashing/347-top-k-frequent-elements.py) | arrays-hashing | Medium | O(n log k) | O(n) |
 
 ## Layout
 
