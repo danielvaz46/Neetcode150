@@ -8,10 +8,10 @@
 #     digits never contain "$", so the first "$" at or after i is always the delimiter,
 #     and then exactly len characters are read. The string itself can contain "$",
 #     digits or be empty without breaking anything, unlike joining on a separator.
-#   - [AVOID COPY] Improved from the first version: no leading count of strings (decode
-#     just loops until the end of s), and no s = s[ptr:] re-slicing each iteration, which
-#     copied the remaining string every time (O(m^2) overall). s.index("$", i) searches
-#     from an offset instead, so decode is a single O(m) pass.
+#   - [AVOID COPY] Decode tracks an index i and uses s.index("$", i) to search from an
+#     offset. Re-slicing with s = s[ptr:] after each string would copy the remaining
+#     string every time (O(m^2) overall), so this keeps decode a single O(m) pass.
+#   - No leading count of strings is needed: decode just loops until the end of s.
 #   - [PYTHONIC] "".join(parts) builds the string once, instead of += in a loop.
 #   - [PYTHONIC] f"{len(s)}${s}" instead of str(len(s)) + "$" + s.
 #   - [PYTHONIC] Alternative: encode is a one-liner with a generator:
