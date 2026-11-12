@@ -9,6 +9,7 @@ My LeetCode solutions, organized by pattern. Harder problems include a short not
 | 1 | [Two Sum](arrays-hashing/1-two-sum.py) | arrays-hashing | Easy | O(n) | O(n) |
 | 36 | [Valid Sudoku](arrays-hashing/36-valid-sudoku.py) | arrays-hashing | Medium | O(1) | O(1) |
 | 49 | [Group Anagrams](arrays-hashing/49-group-anagrams.py) | arrays-hashing | Medium | O(n * k) | O(n * k) |
+| 125 | [Valid Palindrome](two-pointers/125-valid-palindrome.py) | two-pointers | Easy | O(n) | O(1) |
 | 128 | [Longest Consecutive Sequence](arrays-hashing/128-longest-consecutive-sequence.py) | arrays-hashing | Medium | O(n) | O(n) |
 | 217 | [Contains Duplicate](arrays-hashing/217-contains-duplicate.py) | arrays-hashing | Easy | O(n) | O(n) |
 | 238 | [Product of Array Except Self](arrays-hashing/238-product-of-array-except-self.py) | arrays-hashing | Medium | O(n) | O(1) |
