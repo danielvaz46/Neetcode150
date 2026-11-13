@@ -21,6 +21,18 @@
 #     length without a separate counter.
 #   - Alternative: sorted(set(nums)) and scan, extending the streak while the next
 #     value is previous + 1. Simpler to reason about, but O(n log n).
+# Interview Q&A:
+#   Q: There is a while loop inside a for loop. Why is it O(n)?
+#   A: Only run starts walk, and each number is walked at most once, so total work is at
+#      most about 2n steps.
+#   Q: What other approaches exist?
+#   A: Sort and scan (O(n log n)). Union-find over adjacent values (about O(n)). A dict of
+#      run lengths at the run endpoints, merging runs as each number is added (O(n)).
+#   Q: How do duplicates affect it?
+#   A: The set removes them, and iterating the set avoids repeating work.
+#   Q: What if numbers arrive as a stream?
+#   A: Keep run lengths at the endpoints and merge neighbouring runs on each arrival, so
+#      the longest run updates in O(1) per number.
 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:

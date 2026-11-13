@@ -14,6 +14,17 @@
 #   - Checking before inserting means an element can't pair with itself, while
 #     duplicates still work ([3, 3], target 6: the first 3 is stored before the
 #     second is checked).
+# Interview Q&A:
+#   Q: What are the time and space complexities, and what is the trade-off?
+#   A: O(n) time and O(n) space for the dict. Brute force flips it: O(n^2) time, O(1) space.
+#   Q: What if the array is sorted?
+#   A: Use two pointers for O(n) time and O(1) space (see 167).
+#   Q: What if you must return every valid pair, not just one?
+#   A: Don't return early. Map each value to a list of its indices, and decide how to
+#      handle duplicates (e.g. return value pairs through a set).
+#   Q: What if the data doesn't fit in memory?
+#   A: Partition by a key shared by x and target - x (e.g. min(x, target - x)), so each
+#      pair lands in one partition, then solve each partition in memory.
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:

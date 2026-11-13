@@ -19,6 +19,16 @@
 #     right with bisect, O(n log n):
 #         j = bisect_left(numbers, target - numbers[i], i + 1)
 #     then check j < len(numbers) and numbers[j] == target - numbers[i].
+# Interview Q&A:
+#   Q: Prove that moving a pointer never skips the answer.
+#   A: If the sum is too big, numbers[right] plus any partner at or after left is at least as
+#      big, so numbers[right] can't be in the answer. The too-small case is symmetric for left.
+#   Q: Why not use the hash map from Two Sum?
+#   A: It works in O(n) time but costs O(n) space. Sorted input allows O(1).
+#   Q: How would you return every pair?
+#   A: After a match, move both pointers and skip equal values, as in 3Sum.
+#   Q: Is binary search viable?
+#   A: Yes, binary search for target - numbers[i] for each i, but it is O(n log n).
 
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:

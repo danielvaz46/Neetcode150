@@ -17,6 +17,19 @@
 #   - [PYTHONIC] Alternative: encode is a one-liner with a generator:
 #         return "".join(f"{len(s)}${s}" for s in strs)
 #   - [BUILT-IN] Alternative: json.dumps(strs) and json.loads(s) handle the escaping.
+# Interview Q&A:
+#   Q: Why not just join with a delimiter like ","?
+#   A: If a string contains the delimiter, decoding is ambiguous. A length prefix reads
+#      exactly that many characters, so contents never matter.
+#   Q: Why does "$" work after the length?
+#   A: The length is all digits, so the first "$" at or after i is always the delimiter.
+#      A fixed-width length header (e.g. 4 bytes) avoids needing a delimiter at all.
+#   Q: How do you handle an empty string versus an empty list?
+#   A: [""] encodes as "0$" and [] encodes as "", so they decode differently.
+#   Q: What is the decode complexity?
+#   A: O(m) if you track an index. Re-slicing the remaining string each time is O(m^2).
+#   Q: Is there another approach?
+#   A: Escape the delimiter inside strings (more fiddly), or use JSON.
 
 class Solution:
     def encode(self, strs: List[str]) -> str:

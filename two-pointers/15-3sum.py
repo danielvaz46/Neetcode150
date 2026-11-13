@@ -21,6 +21,20 @@
 #   - [BUILT-IN] Alternative: itertools.combinations is the shortest version, but it is
 #     the O(n^3) brute force, so it is only fine for small inputs:
 #         return [list(c) for c in {*combinations(sorted(nums), 3)} if sum(c) == 0]
+# Interview Q&A:
+#   Q: Why sort first?
+#   A: It makes the pointer moves valid and puts equal values next to each other for skipping.
+#   Q: How do you avoid duplicate triplets without a set?
+#   A: Skip a first number equal to the previous one. After a hit, move both pointers past
+#      values equal to the ones they just used.
+#   Q: Can it beat O(n^2)?
+#   A: Not known in general. The 3SUM conjecture says no O(n^(2-e)) algorithm exists.
+#   Q: How do you extend it to 4Sum or kSum?
+#   A: Fix k - 2 numbers with loops or recursion and run two pointers on the rest:
+#      O(n^(k-1)) time.
+#   Q: Is there a hash-set alternative?
+#   A: For each i, run the Two Sum hash scan. Still O(n^2) time, O(n) space, and dedupe
+#      is harder.
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:

@@ -11,6 +11,17 @@
 #   - Alternative: collections.Counter counts in C and also handles Unicode
 #     (the 26-slot array only works for a-z):
 #         return Counter(s) == Counter(t)
+# Interview Q&A:
+#   Q: What if the strings contain Unicode?
+#   A: Replace the 26-slot array with a dict or Counter. Space becomes O(k) for k distinct
+#      characters.
+#   Q: What about sorting both strings?
+#   A: sorted(s) == sorted(t) is O(n log n) time and O(n) space, simpler but slower.
+#   Q: Why check the lengths first?
+#   A: Different lengths can never be anagrams, and equal lengths make the +1/-1 pass
+#      sufficient: an all-zero array means the counts match.
+#   Q: Is the space really O(1)?
+#   A: Yes for a fixed alphabet. For Unicode it grows with the number of distinct characters.
 
 from collections import Counter
 

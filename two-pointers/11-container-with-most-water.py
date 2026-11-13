@@ -19,6 +19,17 @@
 #   - [BUILT-IN] Alternative: the brute force in one expression (O(n^2), too slow for
 #     large inputs):
 #         max((j - i) * min(heights[i], heights[j]) for i, j in combinations(range(len(heights)), 2))
+# Interview Q&A:
+#   Q: Why move the shorter pointer?
+#   A: The area is capped by the shorter wall. Moving the taller pointer shrinks the width
+#      without raising that cap, so it can never improve. Moving the shorter one might.
+#   Q: What are the complexities?
+#   A: O(n) time and O(1) space, versus O(n^2) for checking every pair.
+#   Q: How is this different from Trapping Rain Water (LeetCode 42)?
+#   A: Here one rectangle between two walls counts. Trapping Rain Water sums water over every
+#      position, using prefix and suffix maxima or two pointers with running maxima.
+#   Q: What if the walls are equal?
+#   A: Moving either is safe, since neither alone can improve the area.
 
 class Solution:
     def maxArea(self, heights: List[int]) -> int:

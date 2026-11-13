@@ -22,6 +22,15 @@
 #   - Alternative: one set of tagged tuples instead of three dicts of sets, e.g.
 #     seen.add(("row", r, v)), ("col", c, v), ("box", r // 3, c // 3, v), and return
 #     False if any is already in seen.
+# Interview Q&A:
+#   Q: What are the complexities?
+#   A: O(1) for the fixed 9x9 board (81 cells). For an n x n board it is O(n^2) time and space.
+#   Q: How do you find which box a cell is in?
+#   A: (r // 3, c // 3), or one integer: 3 * (r // 3) + c // 3.
+#   Q: Does this check the puzzle is solvable?
+#   A: No. It only checks that the filled cells don't conflict.
+#   Q: Is there a leaner way to track what's used?
+#   A: A 9-bit mask per row, column and box (mask & (1 << digit)), which is O(1) integers.
 
 from collections import defaultdict
 

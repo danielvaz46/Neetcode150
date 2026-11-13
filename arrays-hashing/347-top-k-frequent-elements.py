@@ -18,6 +18,18 @@
 #     buckets[count] = [nums with that count], then read the buckets from the
 #     highest index down until k numbers are collected:
 #         buckets = [[] for _ in range(len(nums) + 1)]
+# Interview Q&A:
+#   Q: Compare the heap, bucket sort and full sort.
+#   A: Heap: O(n log k) time. Bucket sort: O(n) time, since counts can't exceed n. Sorting
+#      every count: O(n log n). All use O(n) space for the counter.
+#   Q: Why a min-heap of size k and not a max-heap?
+#   A: Evicting the smallest keeps only k entries, and each operation costs O(log k). A
+#      max-heap of everything also works (heapify O(n), k pops), but holds all entries.
+#   Q: How are ties handled?
+#   A: Tuples compare by count first, then the number. The problem guarantees a unique answer.
+#   Q: What if the data is a stream?
+#   A: Keep a running counter and heap, or use Misra-Gries / count-min sketch for approximate
+#      heavy hitters in bounded memory.
 
 import heapq
 from collections import defaultdict

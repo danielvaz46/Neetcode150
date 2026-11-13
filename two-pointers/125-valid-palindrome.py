@@ -26,6 +26,17 @@
 #         "abcdef"[1::2]    -> "bdf"      indices 1, 3, 5
 #         "abcdef"[::-2]    -> "fdb"      indices 5, 3, 1
 #         "abcdef"[4:1:-1]  -> "edc"      indices 4, 3, 2 (stop 1 is excluded)
+# Interview Q&A:
+#   Q: Why is two pointers better than reversing a cleaned copy?
+#   A: Both are O(n) time, but pointers use O(1) space and stop at the first mismatch.
+#   Q: What about Unicode and accents?
+#   A: isalnum() works on Unicode letters. casefold() is a safer case-insensitive match than
+#      lower() (e.g. German ss), and unicodedata.normalize handles accent forms.
+#   Q: How would you allow deleting one character (LeetCode 680)?
+#   A: On the first mismatch, check whether skipping the left or the right character leaves
+#      a palindrome. Still O(n).
+#   Q: Why does the inner loop check left < right again?
+#   A: Without it the pointers can cross or index out of range on strings of only punctuation.
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
