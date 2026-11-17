@@ -11,6 +11,7 @@ My LeetCode solutions, organized by pattern. Harder problems include a short not
 | 15 | [3Sum](two-pointers/15-3sum.py) | two-pointers | Medium | O(n^2) | O(1) |
 | 36 | [Valid Sudoku](arrays-hashing/36-valid-sudoku.py) | arrays-hashing | Medium | O(1) | O(1) |
 | 49 | [Group Anagrams](arrays-hashing/49-group-anagrams.py) | arrays-hashing | Medium | O(n * k) | O(n * k) |
+| 121 | [Best Time to Buy and Sell Stock](sliding-window/121-best-time-to-buy-and-sell-stock.py) | sliding-window | Easy | O(n) | O(1) |
 | 125 | [Valid Palindrome](two-pointers/125-valid-palindrome.py) | two-pointers | Easy | O(n) | O(1) |
 | 128 | [Longest Consecutive Sequence](arrays-hashing/128-longest-consecutive-sequence.py) | arrays-hashing | Medium | O(n) | O(n) |
 | 167 | [Two Sum II - Input Array Is Sorted](two-pointers/167-two-sum-ii-input-array-is-sorted.py) | two-pointers | Medium | O(n) | O(1) |
