@@ -7,6 +7,7 @@ My LeetCode solutions, organized by pattern. Harder problems include a short not
 | # | Problem | Pattern | Difficulty | Time | Space |
 |---|---------|---------|------------|------|-------|
 | 1 | [Two Sum](arrays-hashing/1-two-sum.py) | arrays-hashing | Easy | O(n) | O(n) |
+| 3 | [Longest Substring Without Repeating Characters](sliding-window/3-longest-substring-without-repeating-characters.py) | sliding-window | Medium | O(n) | O(min(n, m)) |
 | 11 | [Container With Most Water](two-pointers/11-container-with-most-water.py) | two-pointers | Medium | O(n) | O(1) |
 | 15 | [3Sum](two-pointers/15-3sum.py) | two-pointers | Medium | O(n^2) | O(1) |
 | 36 | [Valid Sudoku](arrays-hashing/36-valid-sudoku.py) | arrays-hashing | Medium | O(1) | O(1) |
