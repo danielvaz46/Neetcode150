@@ -21,6 +21,16 @@ My LeetCode solutions, organized by pattern. Harder problems include a short not
 | 242 | [Valid Anagram](arrays-hashing/242-valid-anagram.py) | arrays-hashing | Easy | O(n) | O(1) |
 | 271 | [Encode and Decode Strings](arrays-hashing/271-encode-and-decode-strings.py) | arrays-hashing | Medium | O(m) | O(m) |
 | 347 | [Top K Frequent Elements](arrays-hashing/347-top-k-frequent-elements.py) | arrays-hashing | Medium | O(n log k) | O(n) |
+| 424 | [Longest Repeating Character Replacement](sliding-window/424-longest-repeating-character-replacement.py) | sliding-window | Medium | O(n * m) | O(m) |
+| 567 | [Permutation in String](sliding-window/567-permutation-in-string.py) | sliding-window | Medium | O(26 * n) | O(1) |
+
+## Starred (revisit)
+
+Tricky problems to come back to.
+
+| # | Problem | Why it's tricky |
+|---|---------|-----------------|
+| 424 | [Longest Repeating Character Replacement](sliding-window/424-longest-repeating-character-replacement.py) | The window validity test (length - max frequency <= k), and why a stale `max_freq` is safe in the optimised version. |
 
 ## Layout
 
